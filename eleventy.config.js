@@ -5,6 +5,9 @@ export default function(eleventyConfig) {
     // Copy circulator-images straight to the output folder
   eleventyConfig.addPassthroughCopy("src/circulator-images");
 
+    // Copy cpdf straight to the output folder
+  eleventyConfig.addPassthroughCopy("src/pdf");
+
   // Copy css to the output folder
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addWatchTarget("src/css");
