@@ -9,6 +9,13 @@
 	{% if script %}
 		<script src="{{ script | url }}" defer></script>
 		{% endif %}
+
+	{# per-page extras from front matter #}
+  	{% if css %}
+    {% for href in css %}
+      	<link rel="stylesheet" href="{{ href }}">
+    	{% endfor %}
+		{% endif %}
 		
 </head>
 	
