@@ -1,0 +1,24 @@
+{
+  "name": "11ty-trafikskadetjanst",
+  "version": "1.0.0",
+  "description": "Alternative implementation of the site for Trafikskadetjänst using 11ty. The reason to do it is to learn 11ty better and also how to work efficiently with gitub repositories inside Visuall Studio Code. This version is now at same level as the Dreamweaver version.",
+  "main": "eleventy.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unilsson/11ty-trafikskadetjanst.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/unilsson/11ty-trafikskadetjanst/issues"
+  },
+  "homepage": "https://github.com/unilsson/11ty-trafikskadetjanst#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.2"
+  }
+}
