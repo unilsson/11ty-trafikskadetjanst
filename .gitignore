@@ -1,7 +1,5 @@
 # ignore
 node_modules/
-package-lock.json
-package.json
 _site/
 .DS_Store
 src/.DS_Store
