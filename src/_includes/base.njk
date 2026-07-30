@@ -1,98 +1,169 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="sv">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
-    <link rel="stylesheet" href="/css/layout.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#075985">
 
-	{% if script %}
-		<script src="{{ script | url }}" defer></script>
-		{% endif %}
+  <title>{{ title or "Trafikskadetjänst" }}</title>
+  <meta
+    name="description"
+    content="{{ description or 'Trafikskadetjänst hjälper kommuner, företag och fastighetsägare att hantera och få ersättning för trafikskador.' }}"
+  >
 
-	{# per-page extras from front matter #}
-  	{% if css %}
+  <link rel="stylesheet" href="/css/layout.css">
+
+  {% if css %}
     {% for href in css %}
-      	<link rel="stylesheet" href="{{ href }}">
-    	{% endfor %}
-		{% endif %}
-		
+      <link rel="stylesheet" href="{{ href | url }}">
+    {% endfor %}
+  {% endif %}
+
+  <script src="/javascript/site-navigation.js" defer></script>
+
+  {% if script %}
+    <script src="{{ script | url }}" defer></script>
+  {% endif %}
 </head>
-	
+
 <body>
-	<div class="row">
-	
-    <div class="column left">
-        <p>&nbsp;</p>
+  <a class="skip-link" href="#main-content">Hoppa till innehållet</a>
+
+  <header class="site-header">
+    <div class="contact-strip">
+      <div class="site-shell contact-strip__inner">
+        <span>Skadereglering för kommuner, företag och fastighetsägare</span>
+        <div class="contact-strip__links">
+          <a href="tel:+4686467040">08-646 70 40</a>
+          <a href="mailto:help@trafikskadetjanst.se">help@trafikskadetjanst.se</a>
         </div>
-		
-    <div class="column middle">
-		<a href="/"><img src="/images/logga.jpg" alt=""/></a>
-		<div class="navbar">
-        	<a href="/"> Hem</a>
-        	<a href="/services"> Tjänster</a>
-        	<a href="/routines"> Rutiner</a>
-        	<a href="/gallery"> Bildgalleri</a>
-        	<a href="/customers"> Kunder</a>
-        	<a href="/policy"> Miljöpolicy</a>
-        	<a href="/contact"> Kontakt</a>
-        	<a href="/about"> Om oss</a>
-    		</div>
+      </div>
     </div>
-		
-    <div class="column right">
-        <p>&nbsp;</p>
-    	</div>
-	    </div>
-	
-	<div class="row">
-	<div class="column left">
-	</div>
-	
-	<div class="column middle">
-        {{ content | safe }}
+
+    <div class="site-shell header-main">
+      <a class="brand" href="/" aria-label="Trafikskadetjänst, startsida">
+        <img
+          class="brand__logo"
+          src="/images/logga.jpg"
+          alt="Trafikskadetjänst"
+        >
+      </a>
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+      >
+        <span class="nav-toggle__label">Meny</span>
+        <span class="nav-toggle__icon" aria-hidden="true"></span>
+      </button>
+
+      <nav
+        class="site-nav"
+        id="primary-navigation"
+        aria-label="Huvudnavigation"
+      >
+        <ul class="nav-list">
+          <li>
+            <a
+              class="nav-link{% if page.url == '/' %} is-active{% endif %}"
+              href="/"
+              {% if page.url == '/' %}aria-current="page"{% endif %}
+            >Hem</a>
+          </li>
+          <li>
+            <a
+              class="nav-link{% if page.url == '/services/' %} is-active{% endif %}"
+              href="/services/"
+              {% if page.url == '/services/' %}aria-current="page"{% endif %}
+            >Tjänster</a>
+          </li>
+          <li>
+            <a
+              class="nav-link{% if page.url == '/routines/' %} is-active{% endif %}"
+              href="/routines/"
+              {% if page.url == '/routines/' %}aria-current="page"{% endif %}
+            >Rutiner</a>
+          </li>
+          <li>
+            <a
+              class="nav-link{% if page.url == '/gallery/' %} is-active{% endif %}"
+              href="/gallery/"
+              {% if page.url == '/gallery/' %}aria-current="page"{% endif %}
+            >Bildgalleri</a>
+          </li>
+          <li>
+            <a
+              class="nav-link{% if page.url == '/customers/' %} is-active{% endif %}"
+              href="/customers/"
+              {% if page.url == '/customers/' %}aria-current="page"{% endif %}
+            >Kunder</a>
+          </li>
+          <li>
+            <a
+              class="nav-link{% if page.url == '/policy/' %} is-active{% endif %}"
+              href="/policy/"
+              {% if page.url == '/policy/' %}aria-current="page"{% endif %}
+            >Miljöpolicy</a>
+          </li>
+          <li>
+            <a
+              class="nav-link{% if page.url == '/contact/' %} is-active{% endif %}"
+              href="/contact/"
+              {% if page.url == '/contact/' %}aria-current="page"{% endif %}
+            >Kontakt</a>
+          </li>
+          <li>
+            <a
+              class="nav-link{% if page.url == '/about/' %} is-active{% endif %}"
+              href="/about/"
+              {% if page.url == '/about/' %}aria-current="page"{% endif %}
+            >Om oss</a>
+          </li>
+        </ul>
+      </nav>
     </div>
-	
-	<div class="column right">
-	</div>
-		
-	</div>
-	
-	<div class="row">
-	
-	<div class="column left">
-	</div>
-		
-	<div class="column middle">
-		<hr color="blue">
-		<div class="column middle footer_left">
-			<h3>KONTAKTA OSS</h3>
-            Tel: 08-646 7040<br/>
-            Fax: 08-603 8838<br/>
-            &nbsp;
-		</div>
-		
-		<div class="column middle footer_middle">
-		    <h3>ADRESS</h3>
-            Trafikskadetjänst <br/>
-            Prästkragevägen 6 <br/>
-            148 71 Sorunda
-		</div>
-		
-		<div class="column middle footer_right">
-            <h3>E-POST</h3>
-            help@trafikskadetjanst.se<br/>
-            &nbsp;
-			<br/>
-			&nbsp;
-        </div>
-		</div>
-		
-	<div class="column right">
-		</div>
-	
-	</div>
-		 
+  </header>
+
+  <main class="site-main" id="main-content" tabindex="-1">
+    <div class="site-shell content-surface page-content">
+      {{ content | safe }}
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-shell footer-grid">
+      <section aria-labelledby="footer-contact">
+        <h2 id="footer-contact">Kontakta oss</h2>
+        <p>
+          <a href="tel:+4686467040">08-646 70 40</a><br>
+          Fax: 08-603 88 38
+        </p>
+      </section>
+
+      <section aria-labelledby="footer-address">
+        <h2 id="footer-address">Adress</h2>
+        <address>
+          Trafikskadetjänst<br>
+          Prästkragevägen 6<br>
+          148 71 Sorunda
+        </address>
+      </section>
+
+      <section aria-labelledby="footer-email">
+        <h2 id="footer-email">E-post</h2>
+        <p>
+          <a href="mailto:help@trafikskadetjanst.se">
+            help@trafikskadetjanst.se
+          </a>
+        </p>
+      </section>
+    </div>
+
+    <div class="site-shell footer-bottom">
+      <p>&copy; Trafikskadetjänst Sverige AB</p>
+    </div>
+  </footer>
 </body>
 </html>
-		
