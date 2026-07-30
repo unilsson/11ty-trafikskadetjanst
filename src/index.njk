@@ -1,23 +1,114 @@
 ---
 layout: base.njk
-title: Trafikskadetjänst AB
-script: "javascript/image-circulator.js"
+title: Trafikskadetjänst – hjälp vid trafikskador
+description: Vi hjälper kommuner, företag och fastighetsägare att utreda trafikskador, anmäla ärenden och bevaka rätten till ersättning.
+script: "/javascript/image-circulator.js"
 ---
 
-<div class="column middle left_content_50_percent">
-		<br><br>
-      <h3>VAR HAMNAR ERA KOSTNADER FÖR TRAFIKSKADOR?</h3>
-      <br/>
-      Enligt trafikskadelagen skall alla skador som orsakas av trafikförsäkringspliktiga fordon ersättas, även om fordonet är okänt. <br/>
-      <br/>
-      Trafikskadetjänst erbjuder den kompetens som fordras för att ni skall få ersättning för skador som orsakats både vid smitningsolyckor och då det skadevållande fordonet är känt.
-	  <br/>
-      <br/>
-      <br/>
-      <a href="/services">Läs mer om våra tjänster</a> <br/>
-      <br/>
-    </div>
-    <div class="column middle right_content_50_percent">
-      <p>&nbsp;</p>
-      <img id="adBanner" alt="Ad Banner">
+<div class="home-page">
+  <section class="home-hero" aria-labelledby="home-title">
+    <div class="home-hero__content">
+      <p class="home-eyebrow">
+        Skadereglering för kommuner, företag och fastighetsägare
+      </p>
+
+      <h1 id="home-title">
+        Vi hjälper er få ersättning för trafikskador
+      </h1>
+
+      <p class="home-lead">
+        När ett fordon skadar exempelvis en trafiksignal, garageport,
+        husfasad, grind eller belysningsstolpe tar vi hand om ärendet
+        från anmälan till bevakning av ersättningen.
+      </p>
+
+      <div class="home-actions">
+        <a class="button button--primary" href="/contact/">
+          Kontakta oss
+        </a>
+        <a class="button button--secondary" href="/services/">
+          Se våra tjänster
+        </a>
       </div>
+    </div>
+
+    <figure class="home-hero__media">
+      <div class="home-hero__image-frame">
+        <img
+          id="adBanner"
+          src="/circulator-images/dalarovagen.jpg"
+          alt="Trafikskada där ett fordon har skadat utrustning vid en väg"
+          width="450"
+          height="338"
+          fetchpriority="high"
+        >
+      </div>
+      <figcaption>
+        Exempel på trafikskador som vi hjälper våra kunder att reglera.
+      </figcaption>
+    </figure>
+  </section>
+
+
+  <section class="home-services" aria-labelledby="home-services-title">
+    <div class="section-heading">
+      <div>
+        <p class="section-kicker">Så hjälper vi er</p>
+        <h2 id="home-services-title">Ett komplett ärendeflöde</h2>
+      </div>
+
+      <a class="section-link" href="/services/">
+        Läs mer om våra tjänster
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+
+    <div class="service-card-grid">
+      <article class="service-card">
+        <span class="service-card__number" aria-hidden="true">01</span>
+        <h3>Utredning och anmälan</h3>
+        <p>
+          Vi hjälper till att sammanställa skadeunderlaget och gör
+          polisanmälan när det skadevållande fordonet är okänt.
+        </p>
+      </article>
+
+      <article class="service-card">
+        <span class="service-card__number" aria-hidden="true">02</span>
+        <h3>Kontakt med försäkringsbolag</h3>
+        <p>
+          Vi anmäler skadan och företräder era intressen i kontakterna
+          med berörda försäkringsbolag och myndigheter.
+        </p>
+      </article>
+
+      <article class="service-card">
+        <span class="service-card__number" aria-hidden="true">03</span>
+        <h3>Bevakning av ersättningen</h3>
+        <p>
+          Vi följer ärendet till avslut och bevakar att
+          ersättningsfrågan hanteras på rätt underlag.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="home-cta" aria-labelledby="home-cta-title">
+    <div>
+      <p class="home-cta__eyebrow">Har ni en trafikskada att hantera?</p>
+      <h2 id="home-cta-title">Ta första kontakten med oss</h2>
+      <p>
+        Ring eller mejla så hjälper vi er bedöma nästa steg.
+      </p>
+    </div>
+
+    <div class="home-cta__actions">
+      <a class="button button--light" href="tel:+4686467040">
+        08-646 70 40
+      </a>
+      <a class="button button--outline-light" href="mailto:help@trafikskadetjanst.se">
+        Skicka e-post
+      </a>
+    </div>
+  </section>
+</div>

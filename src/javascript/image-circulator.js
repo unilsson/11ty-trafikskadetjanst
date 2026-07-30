@@ -1,23 +1,44 @@
-// JavaScript Document
-// JavaScript Documentwindow.onload = choosePic;
-window.onload = choosePic;
+const banner = document.querySelector("#adBanner");
 
-var theAd = 0;
-var adImages = new Array("circulator-images/blankgarport.jpg","circulator-images/dalarovagen.jpg","circulator-images/grind2.jpg");
+if (banner) {
+  const images = [
+    {
+      src: "/circulator-images/blankgarport.jpg",
+      alt: "En garageport som har blivit intryckt av ett fordon",
+    },
+    {
+      src: "/circulator-images/dalarovagen.jpg",
+      alt: "En trafikolycka där ett fordon har skadat utrustning vid en väg",
+    },
+    {
+      src: "/circulator-images/grind2.jpg",
+      alt: "En grind som har blivit nedkörd av ett fordon",
+    },
+  ];
 
-function choosePic() {
-     theAd = Math.floor(Math.random() * adImages.length);
-     document.getElementById("adBanner").src = adImages[theAd];
+  let currentIndex = Math.floor(Math.random() * images.length);
 
-     rotate();
-}
+  const showImage = (index) => {
+    const image = images[index];
+    banner.src = image.src;
+    banner.alt = image.alt;
+  };
 
-function rotate() {
-     theAd++;
-     if (theAd == adImages.length) {
-        theAd = 0;
-     }
-     document.getElementById("adBanner").src = adImages[theAd];
+  for (const image of images) {
+    const preload = new Image();
+    preload.src = image.src;
+  }
 
-     setTimeout(rotate, 7 * 1000);
+  showImage(currentIndex);
+
+  const reducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+
+  if (!reducedMotion) {
+    window.setInterval(() => {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
+    }, 7000);
+  }
 }
