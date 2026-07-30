@@ -1,2 +1,45 @@
-# 11ty-trafikskadetjanst
-Alternative implementation of the site for Trafikskadetjänst using 11ty. The reason to do it is to learn 11ty better and also how to work efficiently with gitub repositories inside Visuall Studio Code. This version is now at same level as the Dreamweaver version. Initial e-mail comments taken into account.
+# Trafikskadetjänst – webbplats
+
+Webbplatsen är byggd med [Eleventy](https://www.11ty.dev/) och genereras som en
+statisk webbplats.
+
+## Förutsättningar
+
+- Node.js 18 eller senare
+- npm
+
+## Installation
+
+```bash
+npm ci
+```
+
+## Lokal utveckling
+
+```bash
+npm run dev
+```
+
+Eleventy startar då en lokal utvecklingsserver, normalt på
+`http://localhost:8080/`.
+
+## Produktionsbygge
+
+```bash
+npm run build
+```
+
+Den färdiga statiska webbplatsen skapas i katalogen `_site`.
+
+## Ren verifiering
+
+```bash
+npm run check
+```
+
+Kommandot tar bort ett tidigare bygge och bygger sedan hela webbplatsen på nytt.
+
+## Arbetsflöde för redesignen
+
+Nästa version utvecklas på branchen `feature/redesign-v2`. Ändringar verifieras
+lokalt innan de skickas till GitHub och senare slås ihop med `main`.

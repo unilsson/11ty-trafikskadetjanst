@@ -1,10 +1,15 @@
 {
   "name": "11ty-trafikskadetjanst",
   "version": "1.0.0",
-  "description": "Alternative implementation of the site for Trafikskadetjänst using 11ty. The reason to do it is to learn 11ty better and also how to work efficiently with gitub repositories inside Visuall Studio Code. This version is now at same level as the Dreamweaver version.",
+  "description": "Webbplats för Trafikskadetjänst, byggd med Eleventy.",
   "main": "eleventy.config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "eleventy --serve",
+    "build": "eleventy",
+    "clean": "rm -rf _site",
+    "check": "npm run clean && npm run build",
+    "audit": "npm audit",
+    "audit:production": "npm audit --omit=dev"
   },
   "repository": {
     "type": "git",
@@ -18,7 +23,24 @@
     "url": "https://github.com/unilsson/11ty-trafikskadetjanst/issues"
   },
   "homepage": "https://github.com/unilsson/11ty-trafikskadetjanst#readme",
-  "dependencies": {
-    "@11ty/eleventy": "^3.1.2"
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "3.1.6"
+  },
+  "overrides": {
+    "gray-matter": "npm:@11ty/gray-matter@2.1.0",
+    "js-yaml": "4.3.0",
+    "anymatch": {
+      "picomatch": "2.3.2"
+    },
+    "readdirp": {
+      "picomatch": "2.3.2"
+    },
+    "@11ty/eleventy-dev-server": {
+      "ws": "8.21.0"
+    }
   }
 }
