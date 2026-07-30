@@ -1,174 +1,268 @@
 ---
 layout: base.njk
-title: Trafikskadetjänst AB
-css: 
+title: Bildgalleri – Trafikskadetjänst
+description: Exempel på trafikskador på portar, räcken, skyltar, belysning och annan egendom.
+css:
   - /css/gallery.css
+script: /javascript/gallery-lightbox.js
 ---
 
-<div class="gallery">
-      <div class="gallery-item"> <img src="/image-gallery/bensinstattion.jpg"
-                onclick="openModal('/image-gallery /bensinstattion.jpg')"
-                alt="Image 1">
-				</div>
-	  
-	       <div class="gallery-item"> <img src="/image-gallery/biligrind.jpg"
-                onclick="openModal('/image-gallery/biligrind.jpg')"
-                alt="Image 2">
-				</div>
-		    <div class="gallery-item"> <img src="/image-gallery/biliportal.jpg"
-                onclick="openModal('/image-gallery/biliportal.jpg')"
-                alt="Image 3">
-				</div>
-			<div class="gallery-item"> <img src="/image-gallery/biltotal.jpg"
-                onclick="openModal('/image-gallery/biltotal.jpg')"
-                alt="Image 4">
-				</div>
-			<div class="gallery-item"> <img src="/image-gallery/blankgarport.jpg"
-                onclick="openModal('/image-gallery/blankgarport.jpg')"
-                alt="Image 5">
-				</div>
-				<div class="gallery-item"> <img src="/image-gallery/bomhaveri.jpg"
-                onclick="openModal('/image-gallery/bomhaveri.jpg')"
-                alt="Image 6">
-				</div>
-				<div class="gallery-item"> <img src="/image-gallery/dalarovagen.jpg"
-                onclick="openModal('/image-gallery/dalarovagen.jpg')"
-                alt="Image 7">
-				</div>
-	
-	       <div class="gallery-item"> <img src="/image-gallery/gaaportliggande.jpg"
-                onclick="openModal('/image-gallery/gaaportliggande.jpg')"
-                alt="Image 10">
-				</div>
-	
-		    <div class="gallery-item"> <img src="/image-gallery/garportligg2.jpg"
-                onclick="openModal('/image-gallery/garportligg2.jpg')"
-                alt="Image 11">
-				</div>
-			<div class="gallery-item"> <img src="/image-gallery/grind.jpg"
-                onclick="openModal('/image-gallery/grind.jpg')"
-                alt="Image 12">
-				</div>
-			<div class="gallery-item"> <img src="/image-gallery/grind2.jpg"
-                onclick="openModal('/image-gallery/grind2.jpg')"
-                alt="Image 13">
-				</div>
+{% set galleryImages = [
+  {
+    src: "/image-gallery/bensinstattion.jpg",
+    alt: "Trafikskada vid en bensinstation",
+    caption: "Skada vid bensinstation"
+  },
+  {
+    src: "/image-gallery/biligrind.jpg",
+    alt: "Bil vid en trafikskadad grind",
+    caption: "Skadad grind"
+  },
+  {
+    src: "/image-gallery/biliportal.jpg",
+    alt: "Bil vid en skadad portal",
+    caption: "Skadad portal"
+  },
+  {
+    src: "/image-gallery/biltotal.jpg",
+    alt: "Omfattande skada efter en fordonskollision",
+    caption: "Omfattande trafikskada"
+  },
+  {
+    src: "/image-gallery/blankgarport.jpg",
+    alt: "Trafikskadad blank garageport",
+    caption: "Skadad garageport"
+  },
+  {
+    src: "/image-gallery/bomhaveri.jpg",
+    alt: "Trafikskadad vägbom",
+    caption: "Skadad vägbom"
+  },
+  {
+    src: "/image-gallery/dalarovagen.jpg",
+    alt: "Trafikskada vid Dalarövägen",
+    caption: "Skada vid väg"
+  },
+  {
+    src: "/image-gallery/dubbelstolpe.jpg",
+    alt: "Två trafikskadade stolpar",
+    caption: "Skadade stolpar"
+  },
+  {
+    src: "/image-gallery/enkelritport.jpg",
+    alt: "Trafikskadad enkel garageport",
+    caption: "Skadad port"
+  },
+  {
+    src: "/image-gallery/gaaportliggande.jpg",
+    alt: "Nedkörd garageport",
+    caption: "Nedkörd garageport"
+  },
+  {
+    src: "/image-gallery/garportligg2.jpg",
+    alt: "Garageport nedkörd av ett fordon",
+    caption: "Skadad garageport"
+  },
+  {
+    src: "/image-gallery/grind.jpg",
+    alt: "Trafikskadad grind",
+    caption: "Skadad grind"
+  },
+  {
+    src: "/image-gallery/grind2.jpg",
+    alt: "Ytterligare exempel på en trafikskadad grind",
+    caption: "Skadad grind"
+  },
+  {
+    src: "/image-gallery/gronport.jpg",
+    alt: "Trafikskadad grön port",
+    caption: "Skadad port"
+  },
+  {
+    src: "/image-gallery/hangandeljus.jpg",
+    alt: "Trafikskadad hängande belysning",
+    caption: "Skadad belysning"
+  },
+  {
+    src: "/image-gallery/konerracke.jpg",
+    alt: "Skadat räcke vid trafikkoner",
+    caption: "Skadat räcke"
+  },
+  {
+    src: "/image-gallery/lastbil.jpg",
+    alt: "Lastbil vid en trafikskadeplats",
+    caption: "Skadeplats med lastbil"
+  },
+  {
+    src: "/image-gallery/mcdonalds.jpg",
+    alt: "Trafikskada vid en restaurang",
+    caption: "Skada vid fastighet"
+  },
+  {
+    src: "/image-gallery/mittrefug.jpg",
+    alt: "Trafikskadad mittrefug",
+    caption: "Skadad mittrefug"
+  },
+  {
+    src: "/image-gallery/reklamskylt.jpg",
+    alt: "Trafikskadad reklamskylt",
+    caption: "Skadad reklamskylt"
+  },
+  {
+    src: "/image-gallery/skavstatelia.jpg",
+    alt: "Trafikskada på en teknisk anläggning",
+    caption: "Skadad anläggning"
+  },
+  {
+    src: "/image-gallery/staket.jpg",
+    alt: "Trafikskadat staket",
+    caption: "Skadat staket"
+  },
+  {
+    src: "/image-gallery/statoil.jpg",
+    alt: "Trafikskada vid en drivmedelsstation",
+    caption: "Skada vid drivmedelsstation"
+  },
+  {
+    src: "/image-gallery/terminalport.jpg",
+    alt: "Trafikskadad terminalport",
+    caption: "Skadad terminalport"
+  },
+  {
+    src: "/image-gallery/trappa.jpg",
+    alt: "Trafikskadad trappa",
+    caption: "Skadad trappa"
+  },
+  {
+    src: "/image-gallery/tskny1.jpg",
+    alt: "Exempel på skadad egendom efter en trafikolycka",
+    caption: "Trafikskadad egendom"
+  },
+  {
+    src: "/image-gallery/tskny3.jpg",
+    alt: "Ytterligare exempel på trafikskadad egendom",
+    caption: "Trafikskadad egendom"
+  },
+  {
+    src: "/image-gallery/vagmarken.jpg",
+    alt: "Trafikskadade vägmärken",
+    caption: "Skadade vägmärken"
+  },
+  {
+    src: "/image-gallery/vagracke.jpg",
+    alt: "Trafikskadat vägräcke",
+    caption: "Skadat vägräcke"
+  },
+  {
+    src: "/image-gallery/vantkur.jpg",
+    alt: "Trafikskadad väntkur",
+    caption: "Skadad väntkur"
+  }
+] %}
 
-				<div class="gallery-item"> <img src="/image-gallery/dalarovagen.jpg"
-                onclick="openModal('/image-gallery/gronport.jpg')"
-                alt="Image 15">
-				</div>
-				<div class="gallery-item"> <img src="/image-gallery/hangandeljus.jpg"
-                onclick="openModal('/image-gallery/hangandeljus.jpg')"
-                alt="Image 16">
-				</div>
-	
-		       <div class="gallery-item"> <img src="/image-gallery/konerracke.jpg"
-                onclick="openModal('/image-gallery/konerracke.jpg')"
-                alt="Image 17">
-				</div>
-		    <div class="gallery-item"> <img src="/image-gallery/lastbil.jpg"
-                onclick="openModal('/image-gallery/lastbil.jpg')"
-                alt="Image 18">
-				</div>
+<div class="gallery-page">
+  <header class="gallery-hero">
+    <div class="gallery-hero__content">
+      <p class="section-kicker">Bildgalleri</p>
+      <h1>Exempel på trafikskador</h1>
+      <p class="gallery-hero__lead">
+        Trafikskador kan drabba allt från portar och räcken till
+        belysning, skyltar och byggnader. Här visas några exempel på
+        skador som kan bli föremål för utredning och ersättning.
+      </p>
+    </div>
 
-			<div class="gallery-item"> <img src="/image-gallery/mittrefug.jpg"
-                onclick="openModal('/image-gallery/mittrefug.jpg')"
-                alt="Image 20">
-				</div>
-				<div class="gallery-item"> <img src="/image-gallery/reklamskylt.jpg"
-                onclick="openModal('/image-gallery/reklamskylt.jpg')"
-                alt="Image 21">
-				</div>
+    <aside class="gallery-hero__note">
+      <strong>{{ galleryImages | length }} skadeexempel</strong>
+      <p>
+        Klicka på en bild för att visa den i större format. Använd
+        piltangenterna för att gå mellan bilderna.
+      </p>
+    </aside>
+  </header>
 
-	
-			       <div class="gallery-item"> <img src="/image-gallery/statoil.jpg"
-                onclick="openModal('/image-gallery/statoil.jpg')"
-                alt="Image 24">
-				</div>
-	
-			<div class="gallery-item"> <img src="/image-gallery/trappa.jpg"
-                onclick="openModal('/image-gallery/trappa.jpg')"
-                alt="Image 26">
-				</div>
-			<div class="gallery-item"> <img src="/image-gallery/tskny1.jpg"
-                onclick="openModal('/image-gallery/tskny1.jpg')"
-                alt="Image 27">
-				</div>
-				<div class="gallery-item"> <img src="/image-gallery/tskny3.jpg"
-                onclick="openModal('/image-gallery/tskny3.jpg')"
-                alt="Image 28">
-				</div>
-				<div class="gallery-item"> <img src="/image-gallery/vagmarken.jpg"
-                onclick="openModal('/image-gallery/vagmarken.jpg')"
-                alt="Image 29">
-				</div>
-				<div class="gallery-item"> <img src="/image-gallery/vagracke.jpg"
-                onclick="openModal('/image-gallery/vagracke.jpg')"
-                alt="Image 30">
-				</div>
-				<div class="gallery-item"> <img src="/image-gallery/vantkur.jpg"
-                onclick="openModal('/image-gallery/vantkur.jpg')"
-                alt="Image 31">
-				</div>
-<!--				<div class="gallery-item"> <img src="/image-gallery/viktstolprekl.jpg"
-                onclick="openModal('/image-gallery/viktstolprekl.jpg')"
-                alt="Image 32">
-				</div>
--->
-		     <div class="gallery-item"> <img src="/image-gallery/dubbelstolpe.jpg"
-                onclick="openModal('/image-gallery/dubbelstolpe.jpg')"
-                alt="Image 8">
-				</div>
-	
+  <section class="damage-gallery" aria-label="Exempel på trafikskador">
+    {% for image in galleryImages %}
+      <button
+        class="gallery-card"
+        type="button"
+        data-gallery-item
+        data-gallery-src="{{ image.src }}"
+        data-gallery-alt="{{ image.alt }}"
+        data-gallery-caption="{{ image.caption }}"
+        aria-label="Visa större bild: {{ image.caption }}"
+      >
+        <img
+          src="{{ image.src }}"
+          alt="{{ image.alt }}"
+          loading="lazy"
+          decoding="async"
+        >
+        <span class="gallery-card__overlay">
+          <span>{{ image.caption }}</span>
+          <span class="gallery-card__expand" aria-hidden="true">↗</span>
+        </span>
+      </button>
+    {% endfor %}
+  </section>
 
-	  
-	  		<div class="gallery-item"> <img src="/image-gallery/gronport.jpg"
-                onclick="openModal('/image-gallery/bomhaveri.jpg')"
-                alt="Image 14">
-	</div>
-				
-			<div class="gallery-item"> <img src="/image-gallery/mcdonalds.jpg"
-                onclick="openModal('/image-gallery/mcdonalds.jpg')"
-                alt="Image 19">
-				</div>
-				
-			<div class="gallery-item"> <img src="/image-gallery/skavstatelia.jpg"
-                onclick="openModal('/image-gallery/skavstatelia.jpg')"
-                alt="Image 22">
-				</div>
-				
-				<div class="gallery-item"> <img src="/image-gallery/staket.jpg"
-                onclick="openModal('/image-gallery/staket.jpg')"
-                alt="Image 23">
-				</div>
-				
-			<div class="gallery-item"> <img src="/image-gallery/enkelritport.jpg"
-                onclick="openModal('/image-gallery/enkelritport.jpg')"
-                alt="Image 9">
-				</div>
-				
-					    <div class="gallery-item"> <img src="/image-gallery/terminalport.jpg"
-                onclick="openModal('/image-gallery/terminalport.jpg')"
-                alt="Image 25">
-				</div>
-	</div>
-	  </div>
-	  
+  <div
+    class="gallery-lightbox"
+    data-gallery-lightbox
+    hidden
+  >
+    <div
+      class="gallery-lightbox__backdrop"
+      data-gallery-close
+      aria-hidden="true"
+    ></div>
 
-	  
-<!-- Modal for Image Display -->
-<div id="myModal" class="modal"> <span class="close" onclick="closeModal()">&times;</span> <img class="modal-content" id="modalImage"> </div>
-<!-- JavaScript for Modal --> 
-<script>
-function openModal(imageSrc) {
-    let modal = document.getElementById("myModal");
-    let modalImg = document.getElementById("modalImage");
-    modal.style.display = "block";
-    modalImg.src = imageSrc;
-}
-function closeModal() {
-    let modal = document.getElementById("myModal");
-    modal.style.display = "none";
-}
-    </script>
+    <div
+      class="gallery-lightbox__dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="gallery-lightbox-caption"
+    >
+      <button
+        class="gallery-lightbox__close"
+        type="button"
+        data-gallery-close
+        aria-label="Stäng bildvisningen"
+      >
+        <span aria-hidden="true">×</span>
+      </button>
+
+      <button
+        class="gallery-lightbox__navigation gallery-lightbox__navigation--previous"
+        type="button"
+        data-gallery-previous
+        aria-label="Visa föregående bild"
+      >
+        <span aria-hidden="true">‹</span>
+      </button>
+
+      <figure class="gallery-lightbox__figure">
+        <img
+          class="gallery-lightbox__image"
+          data-gallery-lightbox-image
+          src=""
+          alt=""
+        >
+        <figcaption
+          class="gallery-lightbox__caption"
+          id="gallery-lightbox-caption"
+          data-gallery-lightbox-caption
+        ></figcaption>
+      </figure>
+
+      <button
+        class="gallery-lightbox__navigation gallery-lightbox__navigation--next"
+        type="button"
+        data-gallery-next
+        aria-label="Visa nästa bild"
+      >
+        <span aria-hidden="true">›</span>
+      </button>
+    </div>
+  </div>
+</div>
