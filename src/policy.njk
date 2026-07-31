@@ -8,29 +8,13 @@ description: Läs eller ladda ned Trafikskadetjänst Sveriges miljöpolicy.
   <header class="policy-hero">
     <div class="policy-hero__content">
       <p class="section-kicker">Miljöpolicy</p>
-      <h1>Vår miljöpolicy finns samlad i ett dokument</h1>
+      <h1>Här finns hela vår milöpolicy</h1>
       <p class="policy-hero__lead">
-        Här kan ni öppna eller ladda ned Trafikskadetjänst Sveriges
+        Här kan ni öppna eller ladda ned Trafikskadetjänsts
         miljöpolicy i PDF-format.
       </p>
 
-      <div class="policy-hero__actions">
-        <a
-          class="button button--primary"
-          href="/pdf/policy.pdf"
-          target="_blank"
-          rel="noopener"
-        >
-          Öppna miljöpolicyn
-        </a>
-        <a
-          class="button button--secondary"
-          href="/pdf/policy.pdf"
-          download
-        >
-          Ladda ned PDF
-        </a>
-      </div>
+
     </div>
 
     <aside class="policy-document" aria-labelledby="policy-document-title">
@@ -70,7 +54,7 @@ description: Läs eller ladda ned Trafikskadetjänst Sveriges miljöpolicy.
 
     <div class="policy-option-grid">
       <article class="policy-option-card">
-        <span class="policy-option-card__number" aria-hidden="true">01</span>
+        <span class="policy-option-card__number" aria-hidden="true">Alternativ 1</span>
         <h3>Läs i webbläsaren</h3>
         <p>
           Öppna miljöpolicyn direkt i en ny flik utan att lämna
@@ -87,7 +71,7 @@ description: Läs eller ladda ned Trafikskadetjänst Sveriges miljöpolicy.
       </article>
 
       <article class="policy-option-card">
-        <span class="policy-option-card__number" aria-hidden="true">02</span>
+        <span class="policy-option-card__number" aria-hidden="true">Alternativ 2</span>
         <h3>Spara en egen kopia</h3>
         <p>
           Ladda ned PDF-filen för intern dokumentation eller läsning
@@ -100,7 +84,7 @@ description: Läs eller ladda ned Trafikskadetjänst Sveriges miljöpolicy.
       </article>
 
       <article class="policy-option-card">
-        <span class="policy-option-card__number" aria-hidden="true">03</span>
+        <span class="policy-option-card__number" aria-hidden="true">Behöver du veta mer?</span>
         <h3>Ställ en fråga</h3>
         <p>
           Kontakta oss om ni har frågor om miljöpolicyn eller vår
@@ -114,25 +98,10 @@ description: Läs eller ladda ned Trafikskadetjänst Sveriges miljöpolicy.
     </div>
   </section>
 
-  <section class="policy-cta" aria-labelledby="policy-cta-title">
-    <div>
-      <p class="policy-cta__eyebrow">Frågor om dokumentet?</p>
-      <h2 id="policy-cta-title">Kontakta Trafikskadetjänst</h2>
-      <p>
-        Vi hjälper gärna till om ni behöver mer information.
-      </p>
-    </div>
+  {% set heading = "Frågor om vår miljöpolicy?" %}
+  {% set title = "Kontakta Trafikskadetjänst" %}
+  {% set action = "Ring eller skicka e-post om ni behöver mer information om vår miljöpolicy." %}
+  {% include "snippets/kontakta-oss.njk" %}
 
-    <div class="policy-cta__actions">
-      <a class="button button--light" href="tel:+4686467040">
-        08-646 70 40
-      </a>
-      <a
-        class="button button--outline-light"
-        href="mailto:help@trafikskadetjanst.se"
-      >
-        Skicka e-post
-      </a>
-    </div>
-  </section>
+
 </div>

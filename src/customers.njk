@@ -12,7 +12,7 @@ script: /javascript/customer-filter.js
       <h1>Erfarenhet från många typer av verksamheter</h1>
       <p class="customers-hero__lead">
         Vi har hjälpt kommuner, fastighetsägare, bostadsrättsföreningar,
-        parkeringsbolag och andra organisationer att hantera trafikskador.
+        parkeringsbolag och andra organisationer att hantera trafikskador sedan 2002.
       </p>
       <a class="button button--primary" href="/contact/">
         Kontakta oss
@@ -436,29 +436,11 @@ script: /javascript/customer-filter.js
       Inga organisationer matchar sökningen.
     </p>
   </section>
+  <br><br>
+  {% set heading = "Vill ni också ha vår hjälp?" %}
+  {% set title = "Låt oss ta hand om ditt nästa trafikskadeärende" %}
+  {% set action = "Ring eller e-posta så berättar vi hur samarbetet fungerar och vilket
+        underlag som behövs." %}
+  {% include "snippets/kontakta-oss.njk" %}
 
-  <section class="customers-cta" aria-labelledby="customers-cta-title">
-    <div>
-      <p class="customers-cta__eyebrow">Vill ni också ha vår hjälp?</p>
-      <h2 id="customers-cta-title">
-        Låt oss ta hand om nästa trafikskadeärende
-      </h2>
-      <p>
-        Kontakta oss så berättar vi hur samarbetet fungerar och vilket
-        underlag som behövs.
-      </p>
-    </div>
-
-    <div class="customers-cta__actions">
-      <a class="button button--light" href="tel:+4686467040">
-        08-646 70 40
-      </a>
-      <a
-        class="button button--outline-light"
-        href="mailto:help@trafikskadetjanst.se"
-      >
-        Skicka e-post
-      </a>
-    </div>
-  </section>
 </div>

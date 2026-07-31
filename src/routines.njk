@@ -234,26 +234,10 @@ description: Så rapporterar ni en trafikskada, beställer reparation, lämnar k
     </div>
   </section>
 
-  <section class="routines-cta" aria-labelledby="routines-cta-title">
-    <div>
-      <p class="routines-cta__eyebrow">Frågor är alltid välkomna</p>
-      <h2 id="routines-cta-title">Behöver ni hjälp med underlaget?</h2>
-      <p>
-        Ring eller mejla oss så går vi igenom vad som behövs för att
-        starta ärendet.
-      </p>
-    </div>
+  {% set heading = "Frågor är alltid välkomna" %}
+  {% set title = "Behöver ni hjälp med underlaget?" %}
+  {% set action = "Ring eller skicka e-post så går vi igenom vad som behövs för att
+        starta ärendet." %}
+  {% include "snippets/kontakta-oss.njk" %}
 
-    <div class="routines-cta__actions">
-      <a class="button button--light" href="tel:+4686467040">
-        08-646 70 40
-      </a>
-      <a
-        class="button button--outline-light"
-        href="mailto:help@trafikskadetjanst.se"
-      >
-        Skicka e-post
-      </a>
-    </div>
-  </section>
 </div>

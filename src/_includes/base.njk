@@ -29,102 +29,7 @@
 <body>
   <a class="skip-link" href="#main-content">Hoppa till innehållet</a>
 
-  <header class="site-header">
-    <div class="contact-strip">
-      <div class="site-shell contact-strip__inner">
-        <span>Skadereglering för kommuner, företag och fastighetsägare</span>
-        <div class="contact-strip__links">
-          <a href="tel:+4686467040">08-646 70 40</a>
-          <a href="mailto:help@trafikskadetjanst.se">help@trafikskadetjanst.se</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="site-shell header-main">
-      <a class="brand" href="/" aria-label="Trafikskadetjänst, startsida">
-        <img
-          class="brand__logo"
-          src="/images/logga.jpg"
-          alt="Trafikskadetjänst"
-        >
-      </a>
-
-      <button
-        class="nav-toggle"
-        type="button"
-        aria-expanded="false"
-        aria-controls="primary-navigation"
-      >
-        <span class="nav-toggle__label">Meny</span>
-        <span class="nav-toggle__icon" aria-hidden="true"></span>
-      </button>
-
-      <nav
-        class="site-nav"
-        id="primary-navigation"
-        aria-label="Huvudnavigation"
-      >
-        <ul class="nav-list">
-          <li>
-            <a
-              class="nav-link{% if page.url == '/' %} is-active{% endif %}"
-              href="/"
-              {% if page.url == '/' %}aria-current="page"{% endif %}
-            >Hem</a>
-          </li>
-          <li>
-            <a
-              class="nav-link{% if page.url == '/services/' %} is-active{% endif %}"
-              href="/services/"
-              {% if page.url == '/services/' %}aria-current="page"{% endif %}
-            >Tjänster</a>
-          </li>
-          <li>
-            <a
-              class="nav-link{% if page.url == '/routines/' %} is-active{% endif %}"
-              href="/routines/"
-              {% if page.url == '/routines/' %}aria-current="page"{% endif %}
-            >Rutiner</a>
-          </li>
-          <li>
-            <a
-              class="nav-link{% if page.url == '/gallery/' %} is-active{% endif %}"
-              href="/gallery/"
-              {% if page.url == '/gallery/' %}aria-current="page"{% endif %}
-            >Bildgalleri</a>
-          </li>
-          <li>
-            <a
-              class="nav-link{% if page.url == '/customers/' %} is-active{% endif %}"
-              href="/customers/"
-              {% if page.url == '/customers/' %}aria-current="page"{% endif %}
-            >Kunder</a>
-          </li>
-          <li>
-            <a
-              class="nav-link{% if page.url == '/policy/' %} is-active{% endif %}"
-              href="/policy/"
-              {% if page.url == '/policy/' %}aria-current="page"{% endif %}
-            >Miljöpolicy</a>
-          </li>
-          <li>
-            <a
-              class="nav-link{% if page.url == '/contact/' %} is-active{% endif %}"
-              href="/contact/"
-              {% if page.url == '/contact/' %}aria-current="page"{% endif %}
-            >Kontakt</a>
-          </li>
-          <li>
-            <a
-              class="nav-link{% if page.url == '/about/' %} is-active{% endif %}"
-              href="/about/"
-              {% if page.url == '/about/' %}aria-current="page"{% endif %}
-            >Om oss</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  {% include "partials/header.njk" %}
 
   <main class="site-main" id="main-content" tabindex="-1">
     <div class="site-shell content-surface page-content">
@@ -132,38 +37,7 @@
     </div>
   </main>
 
-  <footer class="site-footer">
-    <div class="site-shell footer-grid">
-      <section aria-labelledby="footer-contact">
-        <h2 id="footer-contact">Kontakta oss</h2>
-        <p>
-          <a href="tel:+4686467040">08-646 70 40</a><br>
-          Fax: 08-603 88 38
-        </p>
-      </section>
+  {% include "partials/footer.njk" %}
 
-      <section aria-labelledby="footer-address">
-        <h2 id="footer-address">Adress</h2>
-        <address>
-          Trafikskadetjänst<br>
-          Prästkragevägen 6<br>
-          148 71 Sorunda
-        </address>
-      </section>
-
-      <section aria-labelledby="footer-email">
-        <h2 id="footer-email">E-post</h2>
-        <p>
-          <a href="mailto:help@trafikskadetjanst.se">
-            help@trafikskadetjanst.se
-          </a>
-        </p>
-      </section>
-    </div>
-
-    <div class="site-shell footer-bottom">
-      <p>&copy; Trafikskadetjänst Sverige AB</p>
-    </div>
-  </footer>
 </body>
 </html>
